@@ -588,7 +588,7 @@ getDataAlias(0x00, 32) returns []
 
 #### How Aliasing Resolution Works
 
-Traditional EVM simply overwrites memory and returns the latest value. But Synthesizer must prove **how** that value was computed from the original symbols.
+Traditional EVM simply overwrites memory and returns the latest value. But Synthesizer must prove **how** that value was computed from the original [symbols](synthesizer-terminology.md#symbol-processing).
 
 The 2D structure of [MemoryPt](synthesizer-terminology.md#memorypt) (offset × time) allows Synthesizer to:
 

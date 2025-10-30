@@ -288,39 +288,40 @@ public addWireToOutBuffer(inPt: DataPt, outPt: DataPt, placementId: number): voi
 #### Key Points
 
 - **Post-execution processor**: Runs after transaction execution completes
-- **Circuit optimization**: Refactors [placements](synthesizer-terminology.md#placement) to minimize [wire](synthesizer-terminology.md#wire) connections
-- **Format conversion**: Converts symbolic data ([StackPt](synthesizer-terminology.md#stackpt), [MemoryPt](synthesizer-terminology.md#memorypt)) into numerical constraints
+- **EVM-to-Circom conversion**: Converts EVM 256-bit words into Circom-compatible 128-bit [limbs](synthesizer-terminology.md#limb)
+- **Witness generation**: Produces concrete values that will be converted into a proof by the backend
+- **Permutation analysis**: Analyzes chains of symbolic references and generates permutation polynomials
 - **Backend interface**: Produces JSON files that the Rust backend can consume
-- **Two-phase output**: Generates both circuit structure ([permutation](synthesizer-terminology.md#permutation)) and input data ([witness](synthesizer-terminology.md#witness))
 
-#### Purpose and Problem Solved
+#### Three Core Purposes
 
-The Finalizer bridges the gap between **symbolic execution** and **concrete circuit generation**:
+The Finalizer performs three essential transformations:
 
-**Problem 1: Symbolic → Concrete Conversion**
+**Purpose 1: Convert EVM Words to Circom Words**
 
-- During execution, the Synthesizer works with symbolic pointers (e.g., `StackPt`, `MemoryPt`)
-- The backend prover needs concrete numerical wire connections
-- **Solution**: Finalizer converts all symbolic references into actual [wire indices](synthesizer-terminology.md#wire-index) and constraint equations
+- **Problem**: EVM uses 256-bit values, but Circom's BLS12-381 scalar field is 254-bit
+- **Risk**: Direct use of 256-bit values can cause field overflow
+- **Solution**: Split each 256-bit value into two 128-bit limbs (lower + upper)
+- **Trade-off**: This splitting **increases** circuit size and **slows down** proving time, but it's mathematically necessary
+- **Note**: If we could avoid this conversion, performance would be significantly better
 
-**Problem 2: Circuit Optimization**
+**Purpose 2: Generate Circuit Witness**
 
-- Raw placement data from execution can be inefficient (redundant wires, unused connections)
-- Large circuits slow down proving time
-- EVM uses 256-bit values but Circom's finite field is 254-bit (field overflow risk)
-- **Solution**: `PlacementRefactor` optimizes wire sizes, removes unnecessary connections, and splits 256-bit values into two 128-bit [limbs](synthesizer-terminology.md#limb) for field compatibility
+- **What it is**: Concrete numerical values for every wire in the circuit
+- **Why needed**: The backend prover needs actual values (not symbolic pointers) to compute the proof
+- **Process**: Converts symbolic data ([StackPt](synthesizer-terminology.md#stackpt), [MemoryPt](synthesizer-terminology.md#memorypt)) into numerical witness values
+- **Output**: Placement-specific witness files that align with circuit structure
 
-**Problem 3: Backend Integration**
+**Purpose 3: Analyze Symbol Chains and Generate Permutation**
 
-- Frontend and backend use different data structures
-- Backend needs standardized JSON format for circuit loading
-- **Solution**: `Permutation` class generates JSON files that match backend's expected schema
-
-**Problem 4: Witness Data Management**
-
-- Circuit needs both structure (permutation) and concrete values (witness)
-- Witness data must align with circuit wire indices
-- **Solution**: Generates `permutation.json` (structure) and placement-specific witness files
+- **What it is**: A permutation tracks which wires across different [placements](synthesizer-terminology.md#placement) must have the same value
+- **Why needed**: In zk-SNARKs, when one placement's output feeds into another placement's input, the proof system must verify they're equal
+- **How it works**:
+  - Analyzes data flow between placements (e.g., ADD's output → MUL's input)
+  - Groups wires that reference the same value into "permutation groups"
+  - Generates permutation polynomials (X and Y) that encode these equality constraints
+- **Mathematical basis**: Implements Section 3.1 "Compilers" of the [Tokamak zk-SNARK paper](https://eprint.iacr.org/2024/507)
+- **Output**: `permutation.json` containing the circuit structure and wire connection mappings
 
 #### Execution Flow
 
@@ -333,7 +334,7 @@ export class Finalizer {
   }
 
   public async exec(_path?: string, writeToFS: boolean = true): Promise<Permutation> {
-    // 1. Refactor placements (optimize wire sizes)
+    // 1. Refactor placements (convert EVM words to Circom words)
     const placementRefactor = new PlacementRefactor(this.state);
     const refactoriedPlacements = placementRefactor.refactor();
 
@@ -354,24 +355,26 @@ export class Finalizer {
 
 #### Three-Step Process in Detail
 
-**Step 1: Placement Refactoring**
+**Step 1: Placement Refactoring (EVM-to-Circom Conversion)**
 
 ```typescript
 const placementRefactor = new PlacementRefactor(this.state);
 const refactoriedPlacements = placementRefactor.refactor();
 ```
 
-This step performs three critical optimizations:
+This step performs two critical transformations:
 
 1. **Remove Unused Wires**
 
    - Identifies wires that were created but never used by any placement
    - Example: If LOAD [buffer](synthesizer-terminology.md#buffer-placements) creates 10 wires but only 7 are referenced → remove 3 unused wires
+   - This is a true optimization that reduces circuit size
 
-2. **Split 256-bit Values into 128-bit Limbs** (Field Compatibility)
+2. **Split 256-bit Values into 128-bit Limbs** (Precision Alignment for Elliptic Curve Fields)
 
-   - **Problem**: Circom uses a 254-bit finite field, but Ethereum uses 256-bit values
-   - **Solution**: Split each 256-bit value into two 128-bit limbs (lower + upper)
+   - **Why necessary**: Circom's BLS12-381 scalar field is 254-bit, but Ethereum uses 256-bit values
+   - **Consequence**: This is NOT an optimization—it **increases circuit size** and **slows down proving**
+   - **Alternative**: If Circom could handle 256-bit values natively, we wouldn't need this step and performance would improve
    - **Implementation** ([`placementRefactor.ts:53-82`](https://github.com/tokamak-network/Tokamak-zk-EVM/blob/main/packages/frontend/synthesizer/src/tokamak/core/finalizer/placementRefactor.ts#L53-L82)):
 
      ```typescript
@@ -433,8 +436,8 @@ This step performs three critical optimizations:
      // Returns: [10, 11]
      ```
 
-   - Each original wire becomes two wires: `[wireIndex_low, wireIndex_high]`
-   - Backend circuits operate on 128-bit limbs to stay within field bounds
+   - **Result**: Each original wire becomes two wires: `[wireIndex_low, wireIndex_high]`
+   - **Impact**: Backend circuits must now operate on pairs of 128-bit limbs instead of single 256-bit values
 
 3. **Update Wire Connections**
    - Remaps all wire references to reflect the new split structure
@@ -451,16 +454,39 @@ permutation.placementVariables = await permutation.outputPlacementVariables(
 );
 ```
 
-- Creates wire permutation map (how [subcircuits](synthesizer-terminology.md#subcircuit) connect)
-- Generates witness data (concrete values for each wire)
+**What happens in this step**:
 
-**Step 3: Output Final Files**
+1. **Build Permutation Groups** ([`permutation.ts:441-562`](https://github.com/tokamak-network/Tokamak-zk-EVM/blob/main/packages/frontend/synthesizer/src/tokamak/core/finalizer/permutation.ts#L441-L562))
+
+   - Analyzes data flow: which placement outputs feed into which placement inputs
+   - Groups wires that must have identical values
+   - Example: If `ADD.outPts[0]` → `MUL.inPts[1]`, they belong to the same permutation group
+
+2. **Generate Permutation Polynomials** (implements [paper equation 8](https://eprint.iacr.org/2024/507))
+
+   - `permutationX[i][h]`: which wire index in placement h
+   - `permutationY[i][h]`: which placement that wire references
+   - Example: `permutationY[5][3]=1` and `permutationX[5][3]=2` means "wire 5 of placement 3 equals wire 2 of placement 1"
+
+3. **Generate Witness Data**
+   - For each placement, computes concrete values for all wires
+   - Uses Circom's `witness_calculator` to run each [subcircuit](synthesizer-terminology.md#subcircuit) with its inputs
+   - Outputs placement-specific witness files (e.g., `placement_0_witness.json`)
+
+**Step 3: Output Permutation File**
 
 ```typescript
 permutation.outputPermutation(_path);
 ```
 
-- Writes `permutation.json` with complete circuit structure
-- Contains: placement list, wire connections, input/output mappings
+**What this produces**:
+
+- Writes `permutation.json` containing:
+  - Complete placement list with subcircuit IDs
+  - Wire connection mappings (X and Y polynomials)
+  - Input/output buffer sizes
+  - Global wire indices
+
+> **Why permutation is essential**: In zk-SNARKs, the prover must prove that wires carrying the same logical value actually have equal field elements. The permutation polynomials encode these equality constraints, allowing the backend to verify consistency across all placements.
 
 > **Output Files**: For detailed information about the generated files and their structure, see [Output Files](synthesizer-output-files.md).
