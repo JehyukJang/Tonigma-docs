@@ -290,7 +290,7 @@ public addWireToOutBuffer(inPt: DataPt, outPt: DataPt, placementId: number): voi
 - **Post-execution processor**: Runs after transaction execution completes
 - **EVM-to-Circom conversion**: Converts EVM 256-bit words into Circom-compatible 128-bit [limbs](synthesizer-terminology.md#limb)
 - **Witness generation**: Produces concrete values that will be converted into a proof by the backend
-- **Permutation analysis**: Analyzes chains of symbolic references and generates permutation polynomials
+- **Permutation analysis**: Analyzes chains of symbolic references and generates [permutation](synthesizer-terminology.md#permutation) polynomials
 - **Backend interface**: Produces JSON files that the Rust backend can consume
 
 #### Three Core Purposes
