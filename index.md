@@ -4,44 +4,56 @@ This index is the public entry point for Tonigma users, integrators, auditors, a
 
 ## Project-Wide Documentation
 
-- [Tokamak Private App Channels White Paper](whitepaper.md) — architecture, custody, channel policy, privacy model, and security posture.
-- [Terms of Service](legal/terms.md) — terms governing access to and use of Tonigma.
-- [Privacy Notice](legal/privacy-notice.md) — Service data processing and public blockchain-data boundaries.
-- [Monitoring Packet](monitoring/Monitoring-Packet.md) — public monitoring scope, evidence sources, and data-backed packet files.
+- Protocol And Policy
+  - [Tokamak Private App Channels White Paper](whitepaper.md) — architecture, custody, channel policy, privacy model, and security posture.
+  - Legal
+    - [Terms of Service](legal/terms.md) — terms governing access to and use of Tonigma.
+    - [Privacy Notice](legal/privacy-notice.md) — Service data processing and public blockchain-data boundaries.
+- Transparency
+  - [Monitoring Packet](monitoring/Monitoring-Packet.md) — public monitoring scope, evidence sources, and data-backed packet files.
 
-## Bridge And Private-State DApp
+## Product Documentation
 
-- [Bridge Documentation](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/bridge/index.md) — public bridge documentation hub.
-- [Bridge Gas Assessment](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/bridge/gas-assessment.md) — gas-cost reference for bridge calls.
-- [Private-State DApp Documentation](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/index.md) — public reading order for the protocol, contract specification, function constraints, security model, workflow, and channel workspace mirror protocol.
-- [Private-State Background Theory](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/background-theory.md)
-- [Private-State Contract Specification](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/contract-spec.md)
-- [Private-State Function Constraints](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/function-constraints.md)
-- [Private-State Security Model](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/security-model.md)
-- [Private-State Workflow](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/workflow.md)
-- [Channel Workspace Mirror Protocol](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/channel-workspace-mirror-protocol.md)
+- Bridge
+  - [Bridge Documentation](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/bridge/index.md) — public bridge documentation hub.
+  - [Bridge Gas Assessment](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/bridge/gas-assessment.md) — gas-cost reference for bridge calls.
+- Private-State DApp
+  - [Private-State DApp Documentation](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/index.md) — reading order for the complete DApp documentation set.
+  - Protocol And Security
+    - [Background Theory](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/background-theory.md)
+    - [Contract Specification](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/contract-spec.md)
+    - [Function Constraints](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/function-constraints.md)
+    - [Security Model](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/security-model.md)
+  - User And Operator Workflow
+    - [Private-State Workflow](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/workflow.md)
+    - [Channel Workspace Mirror Protocol](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/channel-workspace-mirror-protocol.md)
 
-## Security, Monitoring, And Audit Reports
+## Engineering Documentation
 
-- [Mainnet Deployment Security Audit](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/audit/mainnet-deploy/audit-for-mainnet-deploy.md) — consolidated deployment audit and current review status.
-- [Merged ALU Security Audit](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/merged-alu-security-audit.md) — current circuit security audit and historical findings.
+- Tokamak zk-EVM
+  - [Version Rules](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/docs/version-rules.md) — public package and compatibility versioning rules.
+  - QAP Compiler And Subcircuit Library
+    - [Consumer Integration](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/consumer-integration.md)
+    - [Generation And Release](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/subcircuit-library-generation-and-release.md)
+  - Historical Verify-WASM Reference
+    - [NPM Usage](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/verify/verify-wasm/NPM_USAGE.md)
+    - [Quick Start](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/verify/verify-wasm/QUICK_START.md)
 
-## Tokamak zk-EVM Technical Documentation
+## Assurance And Performance Reports
 
-- [Version Rules](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/docs/version-rules.md) — public package and compatibility versioning rules.
-- [Subcircuit Library Consumer Integration](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/consumer-integration.md) — how supported consumers use the generated subcircuit library.
-- [Subcircuit Library Generation and Release](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/subcircuit-library-generation-and-release.md) — relationship between the generation workflow and the published library package.
-- [Verify-WASM NPM Usage](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/verify/verify-wasm/NPM_USAGE.md) — historical reference for deprecated WASM verifier packages.
-- [Verify-WASM Quick Start](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/verify/verify-wasm/QUICK_START.md) — historical quick-start reference for deprecated WASM verifier packages.
-
-## Optimization And Performance Reports
-
-- [Bridge Optimization Report](https://github.com/JehyukJang/Tonigma-contracts/blob/main/bridge/docs/optimization/optimization_report.md) — bridge gas-optimization report with links to its dated mini-reports.
-- [GPU Prove Optimization Summary](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/prove/optimization/mini-reports/2026-04-30_gpu-prove-optimization-summary.md) — CUDA proving optimization measurements and conclusions.
-- [Prove Optimization Mini-Reports](https://github.com/JehyukJang/Tokamak-zk-EVM/tree/main/packages/backend/prove/optimization/mini-reports) — dated proving optimization reports.
-- [Current CPU Prove Timing Report](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/prove/optimization/timing.local.cpu.current.md)
-- [Remote CUDA Prove Timing Report](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/prove/optimization/timing.remote.no-output-optimize-size.repeat.cuda.md)
-- [TokamakL2JS Optimization Report](https://github.com/JehyukJang/TokamakL2JS/blob/main/docs/optimization_report.md) — optimization results for Tokamak L2 state-manager initialization.
+- Security Audits
+  - [Mainnet Deployment Security Audit](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/audit/mainnet-deploy/audit-for-mainnet-deploy.md) — consolidated deployment audit and current review status.
+  - [Merged ALU Security Audit](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/merged-alu-security-audit.md) — current circuit security audit and historical findings.
+- Optimization And Performance
+  - Bridge
+    - [Bridge Optimization Report](https://github.com/JehyukJang/Tonigma-contracts/blob/main/bridge/docs/optimization/optimization_report.md) — bridge gas-optimization report with links to its dated mini-reports.
+  - Proving
+    - [GPU Prove Optimization Summary](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/prove/optimization/mini-reports/2026-04-30_gpu-prove-optimization-summary.md)
+    - [Prove Optimization Mini-Reports](https://github.com/JehyukJang/Tokamak-zk-EVM/tree/main/packages/backend/prove/optimization/mini-reports)
+    - [Current CPU Prove Timing Report](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/prove/optimization/timing.local.cpu.current.md)
+    - [Remote CUDA Prove Timing Report](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/prove/optimization/timing.remote.no-output-optimize-size.repeat.cuda.md)
+  - TokamakL2JS
+    - [Optimization Report](https://github.com/JehyukJang/TokamakL2JS/blob/main/docs/optimization_report.md) — optimization results for Tokamak L2 state-manager initialization.
 
 ## Scope Notes
 
