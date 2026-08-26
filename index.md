@@ -48,12 +48,7 @@ This index is the public entry point for Tonigma users, integrators, auditors, a
   - Bridge
     - [Bridge Optimization Report](https://github.com/JehyukJang/Tonigma-contracts/blob/main/bridge/docs/optimization/optimization_report.md) — bridge gas-optimization report with links to its dated mini-reports.
   - Proving
-    - [GPU Prove Optimization Summary](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/prove/optimization/mini-reports/2026-04-30_gpu-prove-optimization-summary.md)
-    - [Prove Optimization Mini-Reports](https://github.com/JehyukJang/Tokamak-zk-EVM/tree/main/packages/backend/prove/optimization/mini-reports)
-    - [Current CPU Prove Timing Report](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/prove/optimization/timing.local.cpu.current.md)
-    - [Remote CUDA Prove Timing Report](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/prove/optimization/timing.remote.no-output-optimize-size.repeat.cuda.md)
-  - TokamakL2JS
-    - [Optimization Report](https://github.com/JehyukJang/TokamakL2JS/blob/main/docs/optimization_report.md) — optimization results for Tokamak L2 state-manager initialization.
+    - [Proving Performance History](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/prove/optimization/optimization-report.md) — continuously updated accepted, provisional, and rejected performance history.
 
 ## Scope Notes
 
