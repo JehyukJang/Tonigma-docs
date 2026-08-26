@@ -57,10 +57,10 @@ provided, the generator reads that directory and fails if the required files are
 The default public output directory is:
 
 ```text
-docs/monitoring/data/
+monitoring/data/
 ```
 
-Passing `--output <dir>` changes only the script's internal validation output directory. The canonical public packet data is published under `docs/monitoring/data/` in this repository.
+Passing `--output <dir>` changes only the script's internal validation output directory. The canonical public packet data is published under `monitoring/data/` in this repository.
 
 ## Method
 
@@ -71,7 +71,7 @@ The generator performs the following steps:
 3. Reads Etherscan source verification status, using the API when available and falling back to Etherscan's public contract page status when the API cannot be read.
 4. Reads Google Drive artifact metadata from the configured artifact publication folder.
 5. Builds ABI-derived event monitoring coverage for the Monitoring Packet checklist.
-6. Publishes public packet data to `docs/monitoring/data/` in this repository.
+6. Publishes public packet data to `monitoring/data/` in this repository.
 
 ## Public Outputs
 
