@@ -22,7 +22,7 @@ This rule applies equally to documents held by `Tonigma-docs` and to documents r
 
 ### Required External Research Exception
 
-The path rule has one explicit exception: `index.md` must index [An Efficient SNARK for Field-Programmable and RAM Circuits](https://eprint.iacr.org/2024/507) in the `Tokamak zk-EVM` category as backend design and security analysis. This external research publication has no Tonigma repository-relative path. The exception is limited to this paper and does not make other externally hosted or publicly reachable documents eligible.
+The path rule has one explicit exception: `index.md` must index [An Efficient SNARK for Field-Programmable and RAM Circuits](https://eprint.iacr.org/2024/507) in the `Tokamak zk-EVM` category as Tokamak zk-SNARK backend design and security analysis. This external research publication has no Tonigma repository-relative path and concerns the shared backend protocol rather than one individual backend package. The exception is limited to this paper and does not make other externally hosted or publicly reachable documents eligible.
 
 ## Document Ownership
 
