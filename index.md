@@ -34,13 +34,15 @@ This index is the public reference for Tonigma protocol readers, integrators, au
 
 ## Tokamak zk-EVM
 
-- QAP Compiler And Subcircuit Library
-  - [Consumer Integration](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/publication/consumer-integration.md)
-  - [Generation And Release](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/publication/subcircuit-library-generation-and-release.md)
-- Security
-  - [Merged ALU Security Audit](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/publication/merged-alu-security-audit.md) — current circuit security audit and historical findings.
-- Proving Performance
-  - [Proving Performance History](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/prove/optimization/publication/optimization-report.md) — continuously updated accepted, provisional, and rejected performance history.
+- QAP Compiler
+  - Integration And Release
+    - [Consumer Integration](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/publication/consumer-integration.md)
+    - [Generation And Release](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/publication/subcircuit-library-generation-and-release.md)
+  - Security
+    - [Merged ALU Security Audit](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/publication/merged-alu-security-audit.md) — current circuit security audit and historical findings.
+- Backend Prove
+  - Performance
+    - [Proving Performance History](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/prove/optimization/publication/optimization-report.md) — continuously updated accepted, provisional, and rejected performance history.
 
 ## Scope Notes
 

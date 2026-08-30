@@ -39,6 +39,8 @@ Every publication document belongs under exactly one of these categories. A docu
 
 Subcategories under a fixed technical-core category are determined by the indexed documents. They may be added, renamed, nested, or removed as the publication set changes.
 
+When a fixed technical-core category corresponds to a monorepo with multiple packages, its level-2 categories must first distinguish the owning packages. Level-3 and deeper categories may then organize each package's documents by audience and purpose. Do not place documents from different packages directly under a shared purpose-based level-2 category.
+
 Subcategories should describe the document's demand and purpose, such as policy, protocol reference, integration contract, security audit, operational transparency, or performance report. They must not replace or alter the four fixed technical-core categories.
 
 ## Index Maintenance Rules
@@ -48,5 +50,5 @@ When adding or changing an entry in `index.md`:
 1. Verify that the canonical document path contains `publication`.
 2. Verify that the index links to the canonical source and that the link resolves.
 3. Place the entry under its fixed technical-core category.
-4. Choose the smallest useful subcategory based on the document's audience and purpose.
+4. For a multi-package monorepo category, place the document under its owning package before choosing purpose-based subcategories; otherwise choose the smallest useful subcategory based on the document's audience and purpose.
 5. Remove an entry if its canonical document no longer satisfies the publication-path rule.
