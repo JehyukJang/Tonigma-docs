@@ -1,6 +1,6 @@
 # Tonigma Publication Index
 
-This index is the public entry point for Tonigma users, integrators, auditors, and report readers. Project-wide documents are maintained in this repository. Component documentation remains in its owning repository and is linked here.
+This index is the public reference for Tonigma protocol readers, integrators, auditors, and report readers. Project-wide documents are maintained in this repository. Component technical documentation remains in its owning repository and is linked here.
 
 ## Project-Wide Documentation
 
@@ -12,7 +12,7 @@ This index is the public entry point for Tonigma users, integrators, auditors, a
 - Transparency
   - [Monitoring Packet](monitoring/Monitoring-Packet.md) — public monitoring scope, evidence sources, and data-backed packet files.
 
-## Product Documentation
+## Protocol Reference
 
 - Bridge
   - [Bridge Documentation](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/bridge/index.md) — public bridge documentation hub.
@@ -24,8 +24,7 @@ This index is the public entry point for Tonigma users, integrators, auditors, a
     - [Contract Specification](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/contract-spec.md)
     - [Function Constraints](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/function-constraints.md)
     - [Security Model](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/security-model.md)
-  - User And Operator Workflow
-    - [Private-State Workflow](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/workflow.md)
+  - Interoperability
     - [Channel Workspace Mirror Protocol](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/dapps/private-state/channel-workspace-mirror-protocol.md)
 
 ## Engineering Documentation
@@ -35,10 +34,6 @@ This index is the public entry point for Tonigma users, integrators, auditors, a
   - QAP Compiler And Subcircuit Library
     - [Consumer Integration](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/consumer-integration.md)
     - [Generation And Release](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/subcircuit-library-generation-and-release.md)
-  - Historical Verify-WASM Reference
-    - [NPM Usage](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/verify/verify-wasm/NPM_USAGE.md)
-    - [Quick Start](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/verify/verify-wasm/QUICK_START.md)
-
 ## Assurance And Performance Reports
 
 - Security Audits
@@ -52,4 +47,4 @@ This index is the public entry point for Tonigma users, integrators, auditors, a
 
 ## Scope Notes
 
-This index excludes documents explicitly maintained as internal development references, implementation notes, planning documents, and dated review snapshots that are superseded by a current public report. It also excludes repository README files from the technical-documentation list.
+This index excludes usage guides, command walkthroughs, repository README files, internal development references, implementation notes, planning documents, and dated review snapshots that are superseded by a current public report. Usage guidance belongs in the README of the component that provides the interface.
