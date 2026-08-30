@@ -35,12 +35,13 @@ This index is the public reference for Tonigma protocol readers, integrators, au
 
 ## Tokamak zk-EVM
 
-- QAP Compiler
-  - Integration And Release
-    - [Consumer Integration](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/publication/consumer-integration.md)
-    - [Generation And Release](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/publication/subcircuit-library-generation-and-release.md)
-  - Security
-    - [Merged ALU Security Audit](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/publication/merged-alu-security-audit.md) — current circuit security audit and historical findings.
+- Frontend
+  - QAP Compiler
+    - Integration And Release
+      - [Consumer Integration](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/publication/consumer-integration.md)
+      - [Generation And Release](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/publication/subcircuit-library-generation-and-release.md)
+    - Security
+      - [Merged ALU Security Audit](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/publication/merged-alu-security-audit.md) — current circuit security audit and historical findings.
 - Backend
   - Tokamak zk-SNARK Protocol Design And Security Analysis
     - [An Efficient SNARK for Field-Programmable and RAM Circuits](https://eprint.iacr.org/2024/507) — external research publication describing the Tokamak zk-SNARK protocol shared by backend setup, proving, and verification.
