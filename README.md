@@ -7,3 +7,5 @@ Start with the [publication index](index.md) for project-wide legal, protocol, s
 The repository-local documents are the canonical source for the Tonigma White Paper, Terms of Service, Privacy Notice, and Monitoring Packet.
 
 This repository is a technical and policy reference, not a collection of usage guides. Usage guidance belongs in the README of the component that provides the relevant interface.
+
+Publication-document eligibility and index maintenance are defined in the [Publication Index Policy](INDEX_POLICY.md).
