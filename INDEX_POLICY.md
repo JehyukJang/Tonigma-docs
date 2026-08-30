@@ -30,7 +30,7 @@ The top-level technical-core categories in `index.md` are fixed:
 
 1. `Project-wide Policy`
 2. `Bridge And Channels`
-3. `Private-State DApp`
+3. `Channel Dapps`
 4. `Tokamak zk-EVM`
 
 Every publication document belongs under exactly one of these categories. A document that materially concerns more than one core element is placed under the category that owns its primary contract or policy; cross-references may link to it from related documents without duplicating its index entry.

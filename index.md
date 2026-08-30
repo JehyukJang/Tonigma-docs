@@ -23,14 +23,15 @@ This index is the public reference for Tonigma protocol readers, integrators, au
   - [Mainnet Deployment Security Audit](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/publication/audit/mainnet-deploy/audit-for-mainnet-deploy.md) — consolidated deployment audit and current review status.
   - [Bridge Optimization Report](https://github.com/JehyukJang/Tonigma-contracts/blob/main/bridge/docs/publication/optimization-report.md) — bridge gas-optimization report with links to its dated mini-reports.
 
-## Private-State DApp
+## Channel Dapps
 
-- Protocol And Security
-  - [Private-State DApp Documentation](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/publication/private-state/index.md) — reading order for the complete DApp documentation set.
-  - [Background Theory](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/publication/private-state/background-theory.md)
-  - [Contract Specification](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/publication/private-state/contract-spec.md)
-  - [Function Constraints](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/publication/private-state/function-constraints.md)
-  - [Security Model](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/publication/private-state/security-model.md)
+- Private-State DApp
+  - Protocol And Security
+    - [Private-State DApp Documentation](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/publication/private-state/index.md) — reading order for the complete DApp documentation set.
+    - [Background Theory](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/publication/private-state/background-theory.md)
+    - [Contract Specification](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/publication/private-state/contract-spec.md)
+    - [Function Constraints](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/publication/private-state/function-constraints.md)
+    - [Security Model](https://github.com/JehyukJang/Tonigma-contracts/blob/main/docs/publication/private-state/security-model.md)
 
 ## Tokamak zk-EVM
 
