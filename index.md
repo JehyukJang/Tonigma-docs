@@ -42,6 +42,8 @@ This index is the public reference for Tonigma protocol readers, integrators, au
   - Security
     - [Merged ALU Security Audit](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/frontend/qap-compiler/docs/publication/merged-alu-security-audit.md) — current circuit security audit and historical findings.
 - Backend Prove
+  - Backend Design And Security Analysis
+    - [An Efficient SNARK for Field-Programmable and RAM Circuits](https://eprint.iacr.org/2024/507) — external research publication for Tokamak zk-EVM backend design and security analysis.
   - Performance
     - [Proving Performance History](https://github.com/JehyukJang/Tokamak-zk-EVM/blob/main/packages/backend/prove/optimization/publication/optimization-report.md) — continuously updated accepted, provisional, and rejected performance history.
 

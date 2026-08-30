@@ -20,6 +20,10 @@ This rule applies equally to documents held by `Tonigma-docs` and to documents r
 
 `index.md` must not index a document that fails this path test. It must not infer, reject, or reclassify a component repository's publication decision from a document's contents, intended readers, file type, public availability, or tracking status.
 
+### Required External Research Exception
+
+The path rule has one explicit exception: `index.md` must index [An Efficient SNARK for Field-Programmable and RAM Circuits](https://eprint.iacr.org/2024/507) in the `Tokamak zk-EVM` category as backend design and security analysis. This external research publication has no Tonigma repository-relative path. The exception is limited to this paper and does not make other externally hosted or publicly reachable documents eligible.
+
 ## Document Ownership
 
 `Tonigma-docs` determines publication status only for documents it owns. Each component repository retains authority to determine the publication status of its own documents. `Tonigma-docs` may hold a publication document as its canonical owner or reference the canonical publication document in an owning component repository. The index must link to the canonical source; it must not create a duplicate document merely to make it indexable.
@@ -47,7 +51,7 @@ Subcategories should describe the document's demand and purpose, such as policy,
 
 When adding or changing an entry in `index.md`:
 
-1. Verify that the canonical document path contains `publication`.
+1. Verify that the canonical document path contains `publication`, unless the entry is the required external research exception.
 2. Verify that the index links to the canonical source and that the link resolves.
 3. Place the entry under its fixed technical-core category.
 4. For a multi-package monorepo category, place the document under its owning package before choosing purpose-based subcategories; otherwise choose the smallest useful subcategory based on the document's audience and purpose.
