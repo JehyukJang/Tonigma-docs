@@ -1,14 +1,14 @@
-# Tokamak Private App Channels White Paper
+# Tonigma White Paper
 
 Status: Official public bridge document.
 
-Last updated: 2026-05-12
+Last updated: 2026-09-03
 
 ## Abstract
 
-Tokamak Private App Channels are Ethereum-settled, validity-proven channels for bridge-coupled
-DApps. The bridge keeps canonical asset custody and proof verification on Ethereum, while each
-channel provides a dedicated execution domain for one registered DApp. The framework is intended to
+Tonigma is an Ethereum-settled, validity-proven channel framework for bridge-coupled DApps. The
+bridge keeps canonical asset custody and proof verification on Ethereum, while each channel provides
+a dedicated execution domain for one registered DApp. The framework is intended to
 support multiple DApps and many independently opened channels per DApp, with users choosing the DApp
 and channel policy they want to join. This paper explains why the system uses DApp metadata,
 immutable per-channel policy snapshots, Tokamak proofs for general execution, and Groth16 proofs for
@@ -36,7 +36,7 @@ within those constraints when a channel is created.
 
 ## 1. Thesis
 
-Tokamak Private App Channels are not designed as a general-purpose rollup that asks every application to live inside one global execution environment. The current bridge implementation instead treats a channel as a dedicated validity-proven execution domain for one registered DApp, while Ethereum remains the canonical place for custody, proof verification, and settlement.
+Tonigma is not designed as a general-purpose rollup that asks every application to live inside one global execution environment. The current bridge implementation instead treats a channel as a dedicated validity-proven execution domain for one registered DApp, while Ethereum remains the canonical place for custody, proof verification, and settlement.
 
 That choice is the core design thesis of the system:
 
@@ -730,7 +730,7 @@ Finally, the current system's most visible architectural tradeoff is that it buy
 
 ## 10. Conclusion
 
-The current Tokamak Private App Channels bridge is best understood as a proof-first bridge for dedicated application channels, not as a generic rollup shell. Its design philosophy is consistent across the implementation:
+The current Tonigma bridge is best understood as a proof-first bridge for dedicated application channels, not as a generic rollup shell. Its design philosophy is consistent across the implementation:
 
 - keep Ethereum as the trust anchor
 - replace re-execution with proof verification rather than replacing settlement

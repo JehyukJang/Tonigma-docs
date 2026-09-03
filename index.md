@@ -6,7 +6,7 @@ This index is the public reference for Tonigma protocol readers, integrators, au
 ## Project-wide Policy
 
 - Protocol And Policy
-  - [Tokamak Private App Channels White Paper](publication/project-wide-policy/whitepaper.md) — architecture, custody, channel policy, privacy model, and security posture.
+  - [Tonigma White Paper](publication/project-wide-policy/whitepaper.md) — architecture, custody, channel policy, privacy model, and security posture.
   - Legal
     - [Terms of Service](publication/project-wide-policy/legal/terms.md) — terms governing access to and use of Tonigma.
     - [Privacy Notice](publication/project-wide-policy/legal/privacy-notice.md) — Service data processing and public blockchain-data boundaries.
