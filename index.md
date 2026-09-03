@@ -1,6 +1,7 @@
 # Tonigma Publication Index
 
 This index is the public reference for Tonigma protocol readers, integrators, auditors, and report readers. Project-wide documents are maintained in this repository. Component technical documentation remains in its owning repository and is linked here.
+**This page is work in progress.**
 
 ## Project-wide Policy
 
