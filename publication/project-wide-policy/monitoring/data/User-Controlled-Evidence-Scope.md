@@ -11,8 +11,8 @@ private-state channel.
 
 ## Boundary
 
-Provider Parties, Tokamak Network PTE. LTD., bridge operators, Channel Providers, and channel leaders cannot disclose a
-user's private note history on the user's behalf. They do not hold the user's Ethereum mainnet private key, wallet
+Public-chain data, bridge contracts, Channel metadata, and monitoring outputs cannot disclose a
+user's private note history on the user's behalf. They do not contain the user's Ethereum mainnet private key, wallet
 secret source, viewing key, spending key, note plaintext, or master viewing key.
 
 The available evidence therefore splits into two categories:
@@ -60,7 +60,7 @@ directly at `packages/apps/private-state/cli/investigator/index.html`, filters t
 user-consent package for the specific request.
 
 User-Controlled AI Agents must not confirm the raw evidence export for the user and must not receive the raw evidence
-ZIP. Provider Parties cannot recover leaked plaintext evidence or undo third-party disclosure.
+ZIP. Leaked plaintext evidence cannot be recovered or withdrawn after third-party disclosure.
 
 Examples of user-held facts include:
 
@@ -73,8 +73,7 @@ Examples of user-held facts include:
   number, log index when available, and accepted transition transaction calldata
 - the user's explanation connecting their own L1 bridge entry or exit to their own local note view
 
-The user controls whether to disclose these facts. Provider Parties, Tokamak Network PTE. LTD., bridge operators, Channel
-Providers, and channel leaders should not claim that they can generate them for the user from public logs alone.
+The user controls whether to disclose these facts. Public logs alone cannot generate them for the user.
 
 ## Local Raw Evidence Bundle
 
@@ -176,9 +175,8 @@ key should be sent to an exchange or third party as routine evidence.
 ## Interpretation
 
 This document describes the current evidence-scope documentation and the local raw evidence export.
-It does not mean that all note provenance is publicly reconstructible, that Provider Parties, Tokamak Network PTE. LTD.,
-or Channel Providers can disclose private note history on behalf of users, or that the raw evidence ZIP is itself an
-exchange-ready submission package.
+It does not mean that all note provenance is publicly reconstructible, that public data can disclose
+private note history on behalf of users, or that the raw evidence ZIP is itself an exchange-ready submission package.
 
 The correct monitoring posture remains:
 

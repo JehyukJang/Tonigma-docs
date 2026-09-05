@@ -2,22 +2,18 @@
 
 This document explains how the repository generates the public, data-backed Monitoring Packet files.
 
-The packet generator is maintained in [Tonigma-contracts](https://github.com/JehyukJang/Tonigma-contracts/blob/main/scripts/monitoring-packet/generate.mjs). It is a read-only script that collects current evidence from the mainnet bridge deployment artifacts, Ethereum RPC, Etherscan, and the configured Google Drive artifact folder.
+The packet generator source is in [Tonigma-contracts](https://github.com/JehyukJang/Tonigma-contracts/blob/main/scripts/monitoring-packet/generate.mjs). It is a read-only script that collects current evidence from the mainnet bridge deployment artifacts, Ethereum RPC, Etherscan, and the configured Google Drive artifact folder.
 
 The external policy model for monitoring, public disclosure boundaries, user-controlled selective disclosure, and channel policy is described in the [White Paper](../whitepaper.md). The generator creates data files that support the white paper's policy statements. The packet may also include manually maintained companion files for narrow audit or exchange-dispute scopes.
 
-## Channel-Scoped Public Observer
+## Channel Observer And Workspace Mirror Source
 
-Public observer URLs are Channel-scoped. The packet generator reads the selected Channel's
-observer URL from on-chain Channel metadata when the bridge deployment supports that registry. CLI
-users can print the same Channel-scoped URL with
-`private-state-cli help observer --channel-name <CHANNEL> --network mainnet`.
-
-For `the-great-first-channel`, the currently registered observer URL is
-<https://observer.tonigma.network>. That URL is specific to The Great First Channel and is not a
-Tonigma-wide default observer for every Channel. The observer gives users, reviewers, and external
-monitors a browser entrypoint for the public monitoring surface described by this packet. It does
-not receive wallet secrets, spending keys, viewing keys, or private note plaintext.
+Channel observer and workspace-mirror code is published in
+[channel-workspace-mirror](https://github.com/JehyukJang/channel-workspace-mirror). The packet
+generator can read Channel-specific endpoint metadata when the bridge deployment supports that
+registry, but this document does not enumerate or designate a live endpoint. An observer processes
+public Channel state and does not require wallet secrets, spending keys, viewing keys, or private
+note plaintext.
 
 ## How To Generate
 
@@ -96,9 +92,9 @@ nullifier, transaction, block range, status, available counterparty metadata, or
 transaction context, and export either a narrower user-consent disclosure ZIP or a Markdown
 plain-text linkage report.
 
-This tool supports exceptional exchange-dispute or compliance-response workflows without giving
-Provider Parties, Tokamak Network PTE. LTD., a Channel Provider, a channel operator, or an exchange a viewing key,
-spending key, wallet secret, or full raw wallet history by default. Its scope and limitations are documented in
+This tool supports bounded review workflows without giving an observer, workspace mirror, channel
+operator, exchange, or other reviewer a viewing key, spending key, wallet secret, or full raw
+wallet history by default. Its scope and limitations are documented in
 [data/User-Controlled-Evidence-Scope.md](data/User-Controlled-Evidence-Scope.md).
 
 ## Notes
