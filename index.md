@@ -7,8 +7,7 @@ This index is the public reference for Tonigma protocol readers, integrators, au
 
 - Protocol And Policy
   - [Tonigma White Paper](publication/project-wide-policy/whitepaper.md) — architecture, custody, channel policy, privacy model, and security posture.
-  - Privacy And Disclosure
-    - [Privacy And Disclosure System Policy](publication/project-wide-policy/privacy-disclosure-system-policy.md) — technical boundaries for public records, user-held material, selective disclosure, and component data surfaces.
+  - [Privacy And Disclosure System Policy](publication/project-wide-policy/privacy-disclosure-system-policy.md) — technical boundaries for public records, user-held material, selective disclosure, and component data surfaces.
 - Transparency
   - [Monitoring Packet](publication/project-wide-policy/monitoring/Monitoring-Packet.md) — public monitoring scope, evidence sources, and data-backed packet files.
 

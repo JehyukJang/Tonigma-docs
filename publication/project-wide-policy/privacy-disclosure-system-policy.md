@@ -1,5 +1,7 @@
 # Tonigma Privacy And Disclosure System Policy
 
+Last updated: 2026-09-05
+
 ## Audience And Purpose
 
 This policy is for protocol readers, integrators, auditors, and users who need to understand the privacy properties of Tonigma and the technical boundaries of selective disclosure.

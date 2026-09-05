@@ -1,5 +1,7 @@
 # Monitoring Packet
 
+Last updated: 2026-09-05
+
 This document explains how the repository generates the public, data-backed Monitoring Packet files.
 
 The packet generator source is in [Tonigma-contracts](https://github.com/JehyukJang/Tonigma-contracts/blob/main/scripts/monitoring-packet/generate.mjs). It is a read-only script that collects current evidence from the mainnet bridge deployment artifacts, Ethereum RPC, Etherscan, and the configured Google Drive artifact folder.
