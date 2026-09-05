@@ -2,7 +2,7 @@
 
 Status: Official public bridge document.
 
-Last updated: 2026-09-05
+Last updated: 2026-09-03
 
 ## Abstract
 
@@ -650,37 +650,7 @@ This is why the CLI and operational documents emphasize pre-join review. A chann
 
 The channel stores `genesisBlockNumber`, not an explicit timestamp. The creation time can be derived from the block timestamp for that block, and the channel's `aPubBlockHash` commits the proof-context block data used by the Tokamak path.
 
-### 8.5 Legal Documentation
-
-This white paper explains Tonigma's technical architecture and policy model. It does not replace the
-legal terms that govern use of the Service or the notice that explains Service-related data processing.
-Readers should consult both documents before using the Service or relying on a description of its
-legal or privacy boundaries.
-
-The [Tonigma Terms of Service](legal/terms.md) defines the Service scope, Self-Custody
-responsibilities, public Ethereum-record boundary, user obligations, risk disclosures, and the
-terms that govern access to and use of Tonigma. It is the authoritative source for those legal
-terms; this white paper does not modify them.
-
-The [Tonigma Privacy Notice](legal/privacy-notice.md) explains how personal and technical data may
-be processed through official interfaces, public blockchain records, Channel-scoped observer and
-workspace-mirror services, and Third-Party Services. It also describes retention, user requests,
-and the limits that follow from public blockchain records. It is the authoritative source for those
-privacy notices; the privacy model described in this white paper does not replace it.
-
-### 8.6 Monitoring And Evidence
-
-This white paper describes the stable technical and policy model. It is not a current-state record
-for a particular deployment or Channel. The [Monitoring Packet](monitoring/Monitoring-Packet.md)
-provides the corresponding data-backed evidence layer: current bridge and DApp addresses, owner and
-proxy state, verifier pointers, Channel policy snapshots, ABI-derived monitoring coverage, source
-verification status, and the boundaries of the evidence the packet can provide.
-
-The packet is generated from deployment artifacts, Ethereum RPC, Etherscan, and the configured
-artifact-publication folder. Its outputs may change as the monitored deployment or Channel changes;
-the white paper remains the source for the underlying architecture and policy rationale.
-
-### 8.7 Remaining Accepted Or Mitigated Security Issues
+### 8.5 Remaining Accepted Or Mitigated Security Issues
 
 The current mainnet posture does not claim that every operational risk has been eliminated. The following issues are either accepted as trust assumptions or mitigated to a level considered practical for the current launch.
 
